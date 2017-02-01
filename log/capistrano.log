@@ -1,0 +1,134 @@
+# Logfile created on 2017-02-01 13:11:14 +0100 by logger.rb/56815
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:11:14 +0100 cap production deloy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:11:19 +0100 cap production deloy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:11:33 +0100 cap production deloy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:11:42 +0100 cap production deloy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:11:57 +0100 cap production deloy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:13:22 +0100 cap production deloy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:13:34 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d792d24a] Running /usr/bin/env mkdir -p /tmp as lugze@lugze_server
+ DEBUG [d792d24a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d792d24a] Finished in 0.622 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 100.0%
+  INFO [48d1d306] Running /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh as lugze@lugze_server
+ DEBUG [48d1d306] Command: /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh
+  INFO [48d1d306] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [de50bcf9] Running /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD as lugze@lugze_server
+ DEBUG [de50bcf9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD )
+ DEBUG [de50bcf9] 	/usr/bin/env: 
+ DEBUG [de50bcf9] 	git
+ DEBUG [de50bcf9] 	: No such file or directory
+ DEBUG [de50bcf9] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:15:16 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a74dfaf3] Running /usr/bin/env mkdir -p /tmp as lugze@lugze_server
+ DEBUG [a74dfaf3] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a74dfaf3] Finished in 0.468 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 100.0%
+  INFO [7e7c5927] Running /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh as lugze@lugze_server
+ DEBUG [7e7c5927] Command: /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh
+  INFO [7e7c5927] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [03fec85a] Running /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD as lugze@lugze_server
+ DEBUG [03fec85a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD )
+ DEBUG [03fec85a] 	Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+ DEBUG [03fec85a] 	Permission denied (publickey).
+ DEBUG [03fec85a] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:16:44 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f371e13d] Running /usr/bin/env mkdir -p /tmp as lugze@lugze_server
+ DEBUG [f371e13d] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f371e13d] Finished in 0.478 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 100.0%
+  INFO [26762d94] Running /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh as lugze@lugze_server
+ DEBUG [26762d94] Command: /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh
+  INFO [26762d94] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [f984a449] Running /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD as lugze@lugze_server
+ DEBUG [f984a449] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD )
+ DEBUG [f984a449] 	2311f447cffd20b3ee394722f701bb2c2b828a15	HEAD
+  INFO [f984a449] Finished in 1.709 seconds with exit status 0 (successful).
+  INFO [be74d78d] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [be74d78d] Command: /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases
+  INFO [be74d78d] Finished in 0.146 seconds with exit status 0 (successful).
+ DEBUG [7a2d6dd0] Running [ -f /var/www/lugze.org/web/current/REVISION ] as lugze@lugze_server
+ DEBUG [7a2d6dd0] Command: [ -f /var/www/lugze.org/web/current/REVISION ]
+ DEBUG [7a2d6dd0] Finished in 0.069 seconds with exit status 1 (failed).
+ DEBUG [5611e15a] Running [ -f /var/www/lugze.org/web/repo/HEAD ] as lugze@lugze_server
+ DEBUG [5611e15a] Command: [ -f /var/www/lugze.org/web/repo/HEAD ]
+ DEBUG [5611e15a] Finished in 0.069 seconds with exit status 1 (failed).
+ DEBUG [58d8e9db] Running if test ! -d /var/www/lugze.org/web; then echo "Directory does not exist '/var/www/lugze.org/web'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [58d8e9db] Command: if test ! -d /var/www/lugze.org/web; then echo "Directory does not exist '/var/www/lugze.org/web'" 1>&2; false; fi
+ DEBUG [58d8e9db] Finished in 0.299 seconds with exit status 0 (successful).
+  INFO [a54281d1] Running /usr/bin/env git clone --mirror git@github.com:lugze/blog.git /var/www/lugze.org/web/repo as lugze@lugze_server
+ DEBUG [a54281d1] Command: cd /var/www/lugze.org/web && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git clone --mirror git@github.com:lugze/blog.git /var/www/lugze.org/web/repo )
+ DEBUG [a54281d1] 	Cloning into bare repository '/var/www/lugze.org/web/repo'...
+  INFO [a54281d1] Finished in 1.600 seconds with exit status 0 (successful).
+ DEBUG [05113e2c] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [05113e2c] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [05113e2c] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [9f484ff0] Running /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git as lugze@lugze_server
+ DEBUG [9f484ff0] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git )
+  INFO [9f484ff0] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [cd8dfbb0] Running /usr/bin/env git remote update --prune as lugze@lugze_server
+ DEBUG [cd8dfbb0] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [cd8dfbb0] 	Fetching origin
+  INFO [cd8dfbb0] Finished in 1.331 seconds with exit status 0 (successful).
+ DEBUG [ce99930b] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [ce99930b] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [ce99930b] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [3581173a] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201121647 as lugze@lugze_server
+ DEBUG [3581173a] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201121647 )
+  INFO [3581173a] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [ec88d975] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201121647 as lugze@lugze_server
+ DEBUG [ec88d975] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201121647 )
+  INFO [ec88d975] Finished in 0.097 seconds with exit status 0 (successful).
+ DEBUG [3356d4a2] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [3356d4a2] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [3356d4a2] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [1bd64d4b] Running /usr/bin/env git rev-list --max-count=1 master as lugze@lugze_server
+ DEBUG [1bd64d4b] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1bd64d4b] 	2311f447cffd20b3ee394722f701bb2c2b828a15
+ DEBUG [1bd64d4b] Finished in 0.075 seconds with exit status 0 (successful).
+ DEBUG [587c00f4] Running if test ! -d /var/www/lugze.org/web/releases/20170201121647; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201121647'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [587c00f4] Command: if test ! -d /var/www/lugze.org/web/releases/20170201121647; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201121647'" 1>&2; false; fi
+ DEBUG [587c00f4] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [629fa657] Running /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION as lugze@lugze_server
+ DEBUG [629fa657] Command: cd /var/www/lugze.org/web/releases/20170201121647 && /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION
+  INFO [629fa657] Finished in 0.093 seconds with exit status 0 (successful).
+  INFO [cba7003e] Running /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201121647 /var/www/lugze.org/web/releases/current as lugze@lugze_server
+ DEBUG [cba7003e] Command: /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201121647 /var/www/lugze.org/web/releases/current
+  INFO [cba7003e] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [89b279ed] Running /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web as lugze@lugze_server
+ DEBUG [89b279ed] Command: /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web
+  INFO [89b279ed] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [485a4e45] Running /usr/bin/env ls -x /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [485a4e45] Command: /usr/bin/env ls -x /var/www/lugze.org/web/releases
+ DEBUG [485a4e45] 	20170201121647
+ DEBUG [485a4e45] Finished in 0.093 seconds with exit status 0 (successful).
+ DEBUG [249a5bb3] Running if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [249a5bb3] Command: if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi
+ DEBUG [249a5bb3] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [f80d9755] Running /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201121647 by nedim" >> /var/www/lugze.org/web/revisions.log as lugze@lugze_server
+ DEBUG [f80d9755] Command: cd /var/www/lugze.org/web/releases && /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201121647 by nedim" >> /var/www/lugze.org/web/revisions.log
+  INFO [f80d9755] Finished in 0.071 seconds with exit status 0 (successful).
