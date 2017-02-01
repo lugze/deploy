@@ -1,17 +1,11 @@
-# config valid only for current version of Capistrano
 lock "3.7.2"
 
 set :application, "lugze_blog"
 set :repo_url, "git@github.com:lugze/blog.git"
 
-# Default branch is :master
-#ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
-# Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/lugze.org/web"
 
-# Default value for :format is :airbrussh.
-# set :format, :airbrussh
+set :format, :airbrussh
 
 # You can configure the Airbrussh format using :format_options.
 # These are the defaults.
@@ -26,8 +20,24 @@ set :deploy_to, "/var/www/lugze.org/web"
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { 
+    path: "/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH",
+    'GEM_HOME' => '/home/lugze/.rvm/gems/ruby-2.4.0',
+    'GEM_PATH' => '/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global'
+  }
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
+
+namespace :jekyll do
+    task :build do
+        on roles(:app), in: :sequence, wait: 1 do
+            within release_path  do
+                execute :bundle, "exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site"
+            end
+            end
+    end
+end
+
+after "deploy:finished", "jekyll:build"
+

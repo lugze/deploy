@@ -132,3 +132,372 @@ and the repository exists.
   INFO [f80d9755] Running /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201121647 by nedim" >> /var/www/lugze.org/web/revisions.log as lugze@lugze_server
  DEBUG [f80d9755] Command: cd /var/www/lugze.org/web/releases && /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201121647 by nedim" >> /var/www/lugze.org/web/revisions.log
   INFO [f80d9755] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:34:24 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [67ce4a03] Running /usr/bin/env mkdir -p /tmp as lugze@lugze_server
+ DEBUG [67ce4a03] Command: /usr/bin/env mkdir -p /tmp
+  INFO [67ce4a03] Finished in 0.609 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 100.0%
+  INFO [17f5eae0] Running /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh as lugze@lugze_server
+ DEBUG [17f5eae0] Command: /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh
+  INFO [17f5eae0] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [3336b565] Running /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD as lugze@lugze_server
+ DEBUG [3336b565] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD )
+ DEBUG [3336b565] 	2311f447cffd20b3ee394722f701bb2c2b828a15	HEAD
+  INFO [3336b565] Finished in 1.788 seconds with exit status 0 (successful).
+  INFO [25ee5a91] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [25ee5a91] Command: /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases
+  INFO [25ee5a91] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [a1d009d8] Running [ -f /var/www/lugze.org/web/current/REVISION ] as lugze@lugze_server
+ DEBUG [a1d009d8] Command: [ -f /var/www/lugze.org/web/current/REVISION ]
+ DEBUG [a1d009d8] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [bb89dcfc] Running /usr/bin/env cat /var/www/lugze.org/web/current/REVISION 2>/dev/null as lugze@lugze_server
+ DEBUG [bb89dcfc] Command: /usr/bin/env cat /var/www/lugze.org/web/current/REVISION 2>/dev/null
+ DEBUG [bb89dcfc] 	2311f447cffd20b3ee394722f701bb2c2b828a15
+ DEBUG [bb89dcfc] Finished in 0.093 seconds with exit status 0 (successful).
+ DEBUG [0763da7d] Running [ -f /var/www/lugze.org/web/repo/HEAD ] as lugze@lugze_server
+ DEBUG [0763da7d] Command: [ -f /var/www/lugze.org/web/repo/HEAD ]
+ DEBUG [0763da7d] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/lugze.org/web/repo
+ DEBUG [5cec2ed1] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [5cec2ed1] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [5cec2ed1] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [b3a02af5] Running /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git as lugze@lugze_server
+ DEBUG [b3a02af5] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git )
+  INFO [b3a02af5] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [798e12a3] Running /usr/bin/env git remote update --prune as lugze@lugze_server
+ DEBUG [798e12a3] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [798e12a3] 	Fetching origin
+  INFO [798e12a3] Finished in 1.418 seconds with exit status 0 (successful).
+ DEBUG [6af1b818] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [6af1b818] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [6af1b818] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [0a02f83b] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201123428 as lugze@lugze_server
+ DEBUG [0a02f83b] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201123428 )
+  INFO [0a02f83b] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [4ad55309] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201123428 as lugze@lugze_server
+ DEBUG [4ad55309] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201123428 )
+  INFO [4ad55309] Finished in 0.138 seconds with exit status 0 (successful).
+ DEBUG [633657ef] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [633657ef] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [633657ef] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [1eede80e] Running /usr/bin/env git rev-list --max-count=1 master as lugze@lugze_server
+ DEBUG [1eede80e] Command: cd /var/www/lugze.org/web/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1eede80e] 	2311f447cffd20b3ee394722f701bb2c2b828a15
+ DEBUG [1eede80e] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [b4fc3f1f] Running if test ! -d /var/www/lugze.org/web/releases/20170201123428; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201123428'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [b4fc3f1f] Command: if test ! -d /var/www/lugze.org/web/releases/20170201123428; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201123428'" 1>&2; false; fi
+ DEBUG [b4fc3f1f] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [7b4c5e66] Running /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION as lugze@lugze_server
+ DEBUG [7b4c5e66] Command: cd /var/www/lugze.org/web/releases/20170201123428 && /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION
+  INFO [7b4c5e66] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [a3b2f694] Running /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201123428 /var/www/lugze.org/web/releases/current as lugze@lugze_server
+ DEBUG [a3b2f694] Command: /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201123428 /var/www/lugze.org/web/releases/current
+  INFO [a3b2f694] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [9c06bd62] Running /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web as lugze@lugze_server
+ DEBUG [9c06bd62] Command: /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web
+  INFO [9c06bd62] Finished in 0.083 seconds with exit status 0 (successful).
+ DEBUG [c11de6f6] Running /usr/bin/env ls -x /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [c11de6f6] Command: /usr/bin/env ls -x /var/www/lugze.org/web/releases
+ DEBUG [c11de6f6] 	20170201121647	20170201123428
+ DEBUG [c11de6f6] Finished in 0.077 seconds with exit status 0 (successful).
+ DEBUG [9eab596a] Running if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [9eab596a] Command: if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi
+ DEBUG [9eab596a] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [574db124] Running /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201123428 by nedim" >> /var/www/lugze.org/web/revisions.log as lugze@lugze_server
+ DEBUG [574db124] Command: cd /var/www/lugze.org/web/releases && /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201123428 by nedim" >> /var/www/lugze.org/web/revisions.log
+  INFO [574db124] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [2867c500] Running if test ! -d /var/www/lugze.org/web/releases/20170201123428; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201123428'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [2867c500] Command: if test ! -d /var/www/lugze.org/web/releases/20170201123428; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201123428'" 1>&2; false; fi
+ DEBUG [2867c500] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [1c6d7881] Running /usr/bin/env bundle exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site as lugze@lugze_server
+ DEBUG [1c6d7881] Command: cd /var/www/lugze.org/web/releases/20170201123428 && /usr/bin/env bundle exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site
+ DEBUG [1c6d7881] 	/usr/bin/env: 
+ DEBUG [1c6d7881] 	bundle
+ DEBUG [1c6d7881] 	: No such file or directory
+ DEBUG [1c6d7881] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:42:18 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2c05e82b] Running /usr/bin/env mkdir -p /tmp as lugze@lugze_server
+ DEBUG [2c05e82b] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [2c05e82b] Finished in 0.709 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 100.0%
+  INFO [7bea3dcd] Running /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh as lugze@lugze_server
+ DEBUG [7bea3dcd] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh )
+  INFO [7bea3dcd] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [b96c7aae] Running /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD as lugze@lugze_server
+ DEBUG [b96c7aae] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD )
+ DEBUG [b96c7aae] 	2311f447cffd20b3ee394722f701bb2c2b828a15	HEAD
+  INFO [b96c7aae] Finished in 1.739 seconds with exit status 0 (successful).
+  INFO [55accb4a] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [55accb4a] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases )
+  INFO [55accb4a] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [984d86f8] Running [ -f /var/www/lugze.org/web/current/REVISION ] as lugze@lugze_server
+ DEBUG [984d86f8] Command: [ -f /var/www/lugze.org/web/current/REVISION ]
+ DEBUG [984d86f8] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [da8b8d23] Running /usr/bin/env cat /var/www/lugze.org/web/current/REVISION 2>/dev/null as lugze@lugze_server
+ DEBUG [da8b8d23] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env cat /var/www/lugze.org/web/current/REVISION 2>/dev/null )
+ DEBUG [da8b8d23] 	2311f447cffd20b3ee394722f701bb2c2b828a15
+ DEBUG [da8b8d23] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [866cbe9d] Running [ -f /var/www/lugze.org/web/repo/HEAD ] as lugze@lugze_server
+ DEBUG [866cbe9d] Command: [ -f /var/www/lugze.org/web/repo/HEAD ]
+ DEBUG [866cbe9d] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/lugze.org/web/repo
+ DEBUG [be4ebdbb] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [be4ebdbb] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [be4ebdbb] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [e5baf138] Running /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git as lugze@lugze_server
+ DEBUG [e5baf138] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git )
+  INFO [e5baf138] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [9d5a40df] Running /usr/bin/env git remote update --prune as lugze@lugze_server
+ DEBUG [9d5a40df] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9d5a40df] 	Fetching origin
+  INFO [9d5a40df] Finished in 1.871 seconds with exit status 0 (successful).
+ DEBUG [3ded6e74] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [3ded6e74] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [3ded6e74] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [f020395c] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201124221 as lugze@lugze_server
+ DEBUG [f020395c] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201124221 )
+  INFO [f020395c] Finished in 0.073 seconds with exit status 0 (successful).
+  INFO [03df0b7c] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201124221 as lugze@lugze_server
+ DEBUG [03df0b7c] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201124221 )
+  INFO [03df0b7c] Finished in 0.074 seconds with exit status 0 (successful).
+ DEBUG [94a22177] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [94a22177] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [94a22177] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [b885d28d] Running /usr/bin/env git rev-list --max-count=1 master as lugze@lugze_server
+ DEBUG [b885d28d] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b885d28d] 	2311f447cffd20b3ee394722f701bb2c2b828a15
+ DEBUG [b885d28d] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [152fa229] Running if test ! -d /var/www/lugze.org/web/releases/20170201124221; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124221'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [152fa229] Command: if test ! -d /var/www/lugze.org/web/releases/20170201124221; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124221'" 1>&2; false; fi
+ DEBUG [152fa229] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [79598d82] Running /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION as lugze@lugze_server
+ DEBUG [79598d82] Command: cd /var/www/lugze.org/web/releases/20170201124221 && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION )
+  INFO [79598d82] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [c5d81f76] Running /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201124221 /var/www/lugze.org/web/releases/current as lugze@lugze_server
+ DEBUG [c5d81f76] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201124221 /var/www/lugze.org/web/releases/current )
+  INFO [c5d81f76] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [038bf641] Running /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web as lugze@lugze_server
+ DEBUG [038bf641] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web )
+  INFO [038bf641] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [af59e3b3] Running /usr/bin/env ls -x /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [af59e3b3] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env ls -x /var/www/lugze.org/web/releases )
+ DEBUG [af59e3b3] 	20170201121647	20170201123428	20170201124221
+ DEBUG [af59e3b3] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [d7df7e63] Running if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [d7df7e63] Command: if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi
+ DEBUG [d7df7e63] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [1e5ad569] Running /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201124221 by nedim" >> /var/www/lugze.org/web/revisions.log as lugze@lugze_server
+ DEBUG [1e5ad569] Command: cd /var/www/lugze.org/web/releases && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201124221 by nedim" >> /var/www/lugze.org/web/revisions.log )
+  INFO [1e5ad569] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [880ef8c2] Running if test ! -d /var/www/lugze.org/web/releases/20170201124221; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124221'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [880ef8c2] Command: if test ! -d /var/www/lugze.org/web/releases/20170201124221; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124221'" 1>&2; false; fi
+ DEBUG [880ef8c2] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [9db65fd6] Running /usr/bin/env bundle exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site as lugze@lugze_server
+ DEBUG [9db65fd6] Command: cd /var/www/lugze.org/web/releases/20170201124221 && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env bundle exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site )
+ DEBUG [9db65fd6] 	/home/lugze/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems.rb:270:in `find_spec_for_exe'
+ DEBUG [9db65fd6] 	: 
+ DEBUG [9db65fd6] 	can't find gem bundler (>= 0.a)
+ DEBUG [9db65fd6] 	 (
+ DEBUG [9db65fd6] 	Gem::GemNotFoundException
+ DEBUG [9db65fd6] 	)
+ DEBUG [9db65fd6] 		from /home/lugze/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems.rb:298:in `activate_bin_path'
+ DEBUG [9db65fd6] 		from /home/lugze/.rvm/gems/ruby-2.4.0/bin/bundle:22:in `<main>'
+ DEBUG [9db65fd6] 		from /home/lugze/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `eval'
+ DEBUG [9db65fd6] 		from /home/lugze/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `<main>'
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:44:32 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [aaa3dbea] Running /usr/bin/env mkdir -p /tmp as lugze@lugze_server
+ DEBUG [aaa3dbea] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [aaa3dbea] Finished in 0.472 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 100.0%
+  INFO [d602b58c] Running /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh as lugze@lugze_server
+ DEBUG [d602b58c] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh )
+  INFO [d602b58c] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [3f5b71e9] Running /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD as lugze@lugze_server
+ DEBUG [3f5b71e9] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD )
+ DEBUG [3f5b71e9] 	2311f447cffd20b3ee394722f701bb2c2b828a15	HEAD
+  INFO [3f5b71e9] Finished in 1.691 seconds with exit status 0 (successful).
+  INFO [7ad625cc] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [7ad625cc] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases )
+  INFO [7ad625cc] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [1099c0d9] Running [ -f /var/www/lugze.org/web/current/REVISION ] as lugze@lugze_server
+ DEBUG [1099c0d9] Command: [ -f /var/www/lugze.org/web/current/REVISION ]
+ DEBUG [1099c0d9] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [fc1e1de7] Running /usr/bin/env cat /var/www/lugze.org/web/current/REVISION 2>/dev/null as lugze@lugze_server
+ DEBUG [fc1e1de7] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env cat /var/www/lugze.org/web/current/REVISION 2>/dev/null )
+ DEBUG [fc1e1de7] 	2311f447cffd20b3ee394722f701bb2c2b828a15
+ DEBUG [fc1e1de7] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [cff99413] Running [ -f /var/www/lugze.org/web/repo/HEAD ] as lugze@lugze_server
+ DEBUG [cff99413] Command: [ -f /var/www/lugze.org/web/repo/HEAD ]
+ DEBUG [cff99413] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/lugze.org/web/repo
+ DEBUG [bdb5a4f3] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [bdb5a4f3] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [bdb5a4f3] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [88180366] Running /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git as lugze@lugze_server
+ DEBUG [88180366] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git )
+  INFO [88180366] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [4c7fbdab] Running /usr/bin/env git remote update --prune as lugze@lugze_server
+ DEBUG [4c7fbdab] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4c7fbdab] 	Fetching origin
+  INFO [4c7fbdab] Finished in 1.353 seconds with exit status 0 (successful).
+ DEBUG [16f5ce1f] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [16f5ce1f] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [16f5ce1f] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [242083d8] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201124435 as lugze@lugze_server
+ DEBUG [242083d8] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201124435 )
+  INFO [242083d8] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [64ff71b9] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201124435 as lugze@lugze_server
+ DEBUG [64ff71b9] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201124435 )
+  INFO [64ff71b9] Finished in 0.104 seconds with exit status 0 (successful).
+ DEBUG [316e744e] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [316e744e] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [316e744e] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [84fa50b9] Running /usr/bin/env git rev-list --max-count=1 master as lugze@lugze_server
+ DEBUG [84fa50b9] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [84fa50b9] 	2311f447cffd20b3ee394722f701bb2c2b828a15
+ DEBUG [84fa50b9] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [b7c8e589] Running if test ! -d /var/www/lugze.org/web/releases/20170201124435; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124435'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [b7c8e589] Command: if test ! -d /var/www/lugze.org/web/releases/20170201124435; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124435'" 1>&2; false; fi
+ DEBUG [b7c8e589] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [266e97b6] Running /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION as lugze@lugze_server
+ DEBUG [266e97b6] Command: cd /var/www/lugze.org/web/releases/20170201124435 && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION )
+  INFO [266e97b6] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [9571ffab] Running /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201124435 /var/www/lugze.org/web/releases/current as lugze@lugze_server
+ DEBUG [9571ffab] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201124435 /var/www/lugze.org/web/releases/current )
+  INFO [9571ffab] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [a45daf61] Running /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web as lugze@lugze_server
+ DEBUG [a45daf61] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web )
+  INFO [a45daf61] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [bab31f72] Running /usr/bin/env ls -x /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [bab31f72] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env ls -x /var/www/lugze.org/web/releases )
+ DEBUG [bab31f72] 	20170201121647	20170201123428	20170201124221	20170201124435
+ DEBUG [bab31f72] Finished in 0.072 seconds with exit status 0 (successful).
+ DEBUG [3165c258] Running if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [3165c258] Command: if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi
+ DEBUG [3165c258] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [92f0ab8a] Running /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201124435 by nedim" >> /var/www/lugze.org/web/revisions.log as lugze@lugze_server
+ DEBUG [92f0ab8a] Command: cd /var/www/lugze.org/web/releases && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201124435 by nedim" >> /var/www/lugze.org/web/revisions.log )
+  INFO [92f0ab8a] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [bae2296a] Running if test ! -d /var/www/lugze.org/web/releases/20170201124435; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124435'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [bae2296a] Command: if test ! -d /var/www/lugze.org/web/releases/20170201124435; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124435'" 1>&2; false; fi
+ DEBUG [bae2296a] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [4ce5ed3a] Running /usr/bin/env bundle exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site as lugze@lugze_server
+ DEBUG [4ce5ed3a] Command: cd /var/www/lugze.org/web/releases/20170201124435 && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" ; /usr/bin/env bundle exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site )
+ DEBUG [4ce5ed3a] 	/home/lugze/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems.rb:270:in `find_spec_for_exe'
+ DEBUG [4ce5ed3a] 	: 
+ DEBUG [4ce5ed3a] 	can't find gem bundler (>= 0.a)
+ DEBUG [4ce5ed3a] 	 (
+ DEBUG [4ce5ed3a] 	Gem::GemNotFoundException
+ DEBUG [4ce5ed3a] 	)
+ DEBUG [4ce5ed3a] 		from /home/lugze/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems.rb:298:in `activate_bin_path'
+ DEBUG [4ce5ed3a] 		from /home/lugze/.rvm/gems/ruby-2.4.0/bin/bundle:22:in `<main>'
+ DEBUG [4ce5ed3a] 		from /home/lugze/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `eval'
+ DEBUG [4ce5ed3a] 		from /home/lugze/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `<main>'
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-01 13:47:48 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [427c0d1c] Running /usr/bin/env mkdir -p /tmp as lugze@lugze_server
+ DEBUG [427c0d1c] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env mkdir -p /tmp )
+  INFO [427c0d1c] Finished in 0.468 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 0.0%
+  INFO Uploading /tmp/git-ssh-lugze_blog-production-nedim.sh 100.0%
+  INFO [2b033f5a] Running /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh as lugze@lugze_server
+ DEBUG [2b033f5a] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env chmod 700 /tmp/git-ssh-lugze_blog-production-nedim.sh )
+  INFO [2b033f5a] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [2ca1f9bc] Running /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD as lugze@lugze_server
+ DEBUG [2ca1f9bc] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git ls-remote git@github.com:lugze/blog.git HEAD )
+ DEBUG [2ca1f9bc] 	2311f447cffd20b3ee394722f701bb2c2b828a15	HEAD
+  INFO [2ca1f9bc] Finished in 1.989 seconds with exit status 0 (successful).
+  INFO [eb8d1f34] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [eb8d1f34] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env mkdir -p /var/www/lugze.org/web/shared /var/www/lugze.org/web/releases )
+  INFO [eb8d1f34] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [43229d06] Running [ -f /var/www/lugze.org/web/current/REVISION ] as lugze@lugze_server
+ DEBUG [43229d06] Command: [ -f /var/www/lugze.org/web/current/REVISION ]
+ DEBUG [43229d06] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [68150515] Running /usr/bin/env cat /var/www/lugze.org/web/current/REVISION 2>/dev/null as lugze@lugze_server
+ DEBUG [68150515] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env cat /var/www/lugze.org/web/current/REVISION 2>/dev/null )
+ DEBUG [68150515] 	2311f447cffd20b3ee394722f701bb2c2b828a15
+ DEBUG [68150515] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [d9779192] Running [ -f /var/www/lugze.org/web/repo/HEAD ] as lugze@lugze_server
+ DEBUG [d9779192] Command: [ -f /var/www/lugze.org/web/repo/HEAD ]
+ DEBUG [d9779192] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/lugze.org/web/repo
+ DEBUG [9cde400b] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [9cde400b] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [9cde400b] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [5afeb5d2] Running /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git as lugze@lugze_server
+ DEBUG [5afeb5d2] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote set-url origin git@github.com:lugze/blog.git )
+  INFO [5afeb5d2] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [6eefc35f] Running /usr/bin/env git remote update --prune as lugze@lugze_server
+ DEBUG [6eefc35f] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6eefc35f] 	Fetching origin
+  INFO [6eefc35f] Finished in 1.352 seconds with exit status 0 (successful).
+ DEBUG [5d74d324] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [5d74d324] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [5d74d324] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [e0233f8f] Running /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201124751 as lugze@lugze_server
+ DEBUG [e0233f8f] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env mkdir -p /var/www/lugze.org/web/releases/20170201124751 )
+  INFO [e0233f8f] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [555af715] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201124751 as lugze@lugze_server
+ DEBUG [555af715] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/lugze.org/web/releases/20170201124751 )
+  INFO [555af715] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [2d9897be] Running if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [2d9897be] Command: if test ! -d /var/www/lugze.org/web/repo; then echo "Directory does not exist '/var/www/lugze.org/web/repo'" 1>&2; false; fi
+ DEBUG [2d9897be] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [c8158282] Running /usr/bin/env git rev-list --max-count=1 master as lugze@lugze_server
+ DEBUG [c8158282] Command: cd /var/www/lugze.org/web/repo && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-lugze_blog-production-nedim.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [c8158282] 	2311f447cffd20b3ee394722f701bb2c2b828a15
+ DEBUG [c8158282] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [ff990c99] Running if test ! -d /var/www/lugze.org/web/releases/20170201124751; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124751'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [ff990c99] Command: if test ! -d /var/www/lugze.org/web/releases/20170201124751; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124751'" 1>&2; false; fi
+ DEBUG [ff990c99] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [f3b5a337] Running /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION as lugze@lugze_server
+ DEBUG [f3b5a337] Command: cd /var/www/lugze.org/web/releases/20170201124751 && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env echo "2311f447cffd20b3ee394722f701bb2c2b828a15" >> REVISION )
+  INFO [f3b5a337] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [be4b9e8f] Running /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201124751 /var/www/lugze.org/web/releases/current as lugze@lugze_server
+ DEBUG [be4b9e8f] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env ln -s /var/www/lugze.org/web/releases/20170201124751 /var/www/lugze.org/web/releases/current )
+  INFO [be4b9e8f] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [b3c10e3e] Running /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web as lugze@lugze_server
+ DEBUG [b3c10e3e] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env mv /var/www/lugze.org/web/releases/current /var/www/lugze.org/web )
+  INFO [b3c10e3e] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [bfa2df19] Running /usr/bin/env ls -x /var/www/lugze.org/web/releases as lugze@lugze_server
+ DEBUG [bfa2df19] Command: ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env ls -x /var/www/lugze.org/web/releases )
+ DEBUG [bfa2df19] 	20170201121647	20170201123428	20170201124221	20170201124435	20170201124751
+ DEBUG [bfa2df19] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on lugze_server
+  INFO No old releases (keeping newest 5) on lugze_server
+ DEBUG [b42fbb6b] Running if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [b42fbb6b] Command: if test ! -d /var/www/lugze.org/web/releases; then echo "Directory does not exist '/var/www/lugze.org/web/releases'" 1>&2; false; fi
+ DEBUG [b42fbb6b] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [40aed489] Running /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201124751 by nedim" >> /var/www/lugze.org/web/revisions.log as lugze@lugze_server
+ DEBUG [40aed489] Command: cd /var/www/lugze.org/web/releases && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env echo "Branch master (at 2311f447cffd20b3ee394722f701bb2c2b828a15) deployed as release 20170201124751 by nedim" >> /var/www/lugze.org/web/revisions.log )
+  INFO [40aed489] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG [97ebaa01] Running if test ! -d /var/www/lugze.org/web/releases/20170201124751; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124751'" 1>&2; false; fi as lugze@lugze_server
+ DEBUG [97ebaa01] Command: if test ! -d /var/www/lugze.org/web/releases/20170201124751; then echo "Directory does not exist '/var/www/lugze.org/web/releases/20170201124751'" 1>&2; false; fi
+ DEBUG [97ebaa01] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [979c56c0] Running /usr/bin/env bundle exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site as lugze@lugze_server
+ DEBUG [979c56c0] Command: cd /var/www/lugze.org/web/releases/20170201124751 && ( export PATH="/home/lugze/.rvm/gems/ruby-2.4.0/bin:/home/lugze/.rvm/gems/ruby-2.4.0@global/bin:/home/lugze/.rvm/rubies/ruby-2.4.0/bin:/home/lugze/.rvm/bin:$PATH" GEM_HOME="/home/lugze/.rvm/gems/ruby-2.4.0" GEM_PATH="/home/lugze/.rvm/gems/ruby-2.4.0:/home/lugze/.rvm/gems/ruby-2.4.0@global" ; /usr/bin/env bundle exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site )
+ DEBUG [979c56c0] 	Configuration file: /var/www/lugze.org/web/current/_config.yml
+ DEBUG [979c56c0] 	
+ DEBUG [979c56c0] 	            Source: /var/www/lugze.org/web/current
+ DEBUG [979c56c0] 	
+ DEBUG [979c56c0] 	       Destination: /var/www/lugze.org/web/current/_site
+ DEBUG [979c56c0] 	
+ DEBUG [979c56c0] 	 Incremental build: disabled. Enable with --incremental
+ DEBUG [979c56c0] 	
+ DEBUG [979c56c0] 	      Generating... 
+ DEBUG [979c56c0] 	
+ DEBUG [979c56c0] 	                    done in 0.669 seconds.
+ DEBUG [979c56c0] 	
+ DEBUG [979c56c0] 	 Auto-regeneration: disabled. Use --watch to enable.
+ DEBUG [979c56c0] 	
+  INFO [979c56c0] Finished in 1.400 seconds with exit status 0 (successful).

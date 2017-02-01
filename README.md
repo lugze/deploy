@@ -8,6 +8,9 @@ Potrebno je dodati na lokalni racunar u /etc/hosts file zapis za lugze_server.
 
 ssh lugze@lugze_server -p 22115
 
+## Required gems
+
+gem install bundle jekyll jekyll-feed minima
 
 ## Pokretanje
 
