@@ -15,9 +15,11 @@
 
 `gem install bundle jekyll jekyll-feed minima`
 
-## Deploy
+## Deploying stages
 
 `cap production deploy`
+`cap development deploy`
+`cap dev deploy`
 
 ## Rollback
 
