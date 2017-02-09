@@ -16,6 +16,10 @@ Capistrano deploy procedura za lugze web site.
 
 `gem install bundle jekyll jekyll-feed minima`
 
-## Pokretanje
+## Deploy
 
 `cap production deploy`
+
+## Rollback
+
+`cap production deploy:rollback`
