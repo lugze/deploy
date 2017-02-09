@@ -1,7 +1,6 @@
-# deploy
-Capistrano deploy procedura za lugze web site.
+# Capistrano deploy procedura za lugze web site.
 
-## Setup
+## Setup on client machine
 
 * 1. Potrebno je dodati na lokalni racunar u `/etc/hosts` file zapis za lugze_server.
 * 2. Install Capistrano: gem install capistrano
@@ -12,7 +11,7 @@ Capistrano deploy procedura za lugze web site.
 
 `ssh lugze@lugze_server -p 22115`
 
-## Required gems
+## Required gems on server where deployed
 
 `gem install bundle jekyll jekyll-feed minima`
 
