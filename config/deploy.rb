@@ -4,8 +4,6 @@ set :application, "lugze_blog"
 
 set :repo_url, "git@github.com:lugze/blog.git"
 
-set :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
 set :deploy_to, "/var/www/lugze.org/#{fetch(:branch)}"
 
 set :format, :airbrussh
