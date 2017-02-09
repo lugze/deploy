@@ -2,8 +2,6 @@ lock "3.7.2"
 
 set :application, "lugze_blog"
 
-set :repo_url, "git@github.com:lugze/blog.git"
-
 set :deploy_to, "/var/www/lugze.org/#{fetch(:branch)}"
 
 set :format, :airbrussh
