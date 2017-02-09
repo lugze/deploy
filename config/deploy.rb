@@ -1,9 +1,12 @@
 lock "3.7.2"
 
 set :application, "lugze_blog"
+
 set :repo_url, "git@github.com:lugze/blog.git"
 
-set :deploy_to, "/var/www/lugze.org/web"
+set :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+
+set :deploy_to, "/var/www/lugze.org/#{fetch(:branch)}"
 
 set :format, :airbrussh
 
@@ -19,7 +22,7 @@ namespace :jekyll do
     task :build do
         on roles(:app), in: :sequence, wait: 1 do
             within release_path  do
-                execute :bundle, "exec jekyll build --source /var/www/lugze.org/web/current --destination /var/www/lugze.org/web/current/_site"
+                execute :bundle, "exec jekyll build --source /var/www/lugze.org/#{fetch(:branch)}/current --destination /var/www/lugze.org/#{fetch(:branch)}/current/_site"
             end
             end
     end
