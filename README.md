@@ -17,9 +17,9 @@
 
 ## Deploying stages
 
-`cap production deploy`
-`cap development deploy`
-`cap dev deploy`
+* `cap production deploy`
+* `cap development deploy`
+* `cap dev deploy`
 
 ## Rollback
 
