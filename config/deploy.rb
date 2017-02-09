@@ -18,7 +18,7 @@ namespace :jekyll do
     task :build do
         on roles(:app), in: :sequence, wait: 1 do
             within release_path  do
-                execute :bundle, "exec jekyll build --source /var/www/lugze.org/#{fetch(:branch)}/current --destination /var/www/lugze.org/#{fetch(:branch)}/current/_site"
+                execute :bundle, "exec jekyll build"
             end
             end
     end
