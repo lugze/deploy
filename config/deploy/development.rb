@@ -1,5 +1,5 @@
 set :stage, :development
-set :branch, "development"
+set :branch, "master"
 set :deploy_to, "/var/www/lugze.org/#{fetch(:branch)}"
 set :repo_url, "git@github.com:lugze/new_site.git"
 
