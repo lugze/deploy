@@ -47,7 +47,7 @@ namespace :bundler do
 
 end
 
-after "deploy:published", "bundler:install"
-after "deploy:published", "bundler:update"
+before "deploy:starting", "bundler:install"
+before "deploy:starting", "bundler:update"
 after "deploy:finished", "jekyll:build"
 
