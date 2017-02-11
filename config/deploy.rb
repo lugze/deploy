@@ -15,14 +15,39 @@ set :default_env, {
 set :keep_releases, 5
 
 namespace :jekyll do
+    desc "Build pages from markdown to html with jekyll"
     task :build do
         on roles(:app), in: :sequence, wait: 1 do
             within release_path  do
                 execute :bundle, "exec jekyll build"
             end
-            end
+        end
     end
 end
 
+namespace :bundler do
+
+    desc "Install gems with bundle"
+    task :install do
+        on roles(:app), in: :sequence, wait: 1 do
+            within release_path  do
+                execute :bundle, "install"
+            end
+        end
+    end
+
+    desc "Update gems with bundle"
+    task :update do
+        on roles(:app), in: :sequence, wait: 1 do
+            within release_path  do
+                execute :bundle, "update"
+            end
+        end
+    end
+
+end
+
+after "deploy:published", "bundler:install"
+after "deploy:published", "bundler:update"
 after "deploy:finished", "jekyll:build"
 
